@@ -1,1 +1,21 @@
-hari
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root 
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true       
+  profiles:
+  - dev
+
+logging:
+  level:
+    '[org.springframework.web]': trace
+    '[org.springframework.data.jpa.repository]': trace
+    '[org.hibernate]': trace
